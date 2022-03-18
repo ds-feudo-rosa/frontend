@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route ,Routes} from "react-router-dom";
+import { Footer } from './components/layout/Footer';
+
+
+//pages
+import Navbar from './components/layout/Navbar';
+import AcompanharSolicitacao from './components/pages/AcompanharSolicitacao';
+import ComoVerificamos from './components/pages/ComoVerificamos';
+import Debates from './components/pages/Debates';
+import Feed from './components/pages/Feed';
+import { Inicial } from './components/pages/Inicial';
+import Login from './components/pages/Login';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    return (
+      <>
+      <BrowserRouter>
+      <Navbar />
+      
+        <Routes>
+          <Route path="/" element={<Inicial />}/>
+          <Route path="/acompanhamentos" element={<AcompanharSolicitacao />}/>
+
+          <Route path="/feed" element={<Feed />}/>
+          <Route path="/comoVerificamos" element={<ComoVerificamos />}/>
+          <Route path="/debates" element={<Debates />}/>          
+          <Route path="/login" element={<Login />}/>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+      
+      </>
+      
   );
 }
 
