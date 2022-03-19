@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+export default function Navbar() {
     return(
       <header>
         <nav>
-          <ul>
+          <ul className='navbar'>
             <li>
               <Link to="/feed">Feed</Link>
             </li>
@@ -23,7 +23,5 @@ function Navbar() {
           </ul>
         </nav>
       </header>
-    )
+    );
 };
-
-export default Navbar;

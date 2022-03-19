@@ -1,6 +1,10 @@
-export function Inicial() {
-    return(
-        <div>OI</div>
-    )
-};
+import Evento from "../layout/Evento";
 
+export default function Inicial() {
+    return(
+        <>
+        <Evento />
+        <div>Inicial</div>
+        </>
+    );
+};

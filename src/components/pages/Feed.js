@@ -1,7 +1,5 @@
-function Feed() {
+export default function Feed() {
     return (
         <p>Feed</p>
-    )
+    );
 };
-
-export default Feed;

@@ -1,7 +1,10 @@
-function Login() {
-    return (
-        <p>Login</p>
-    )
-};
+import Form from './../layout/layoutLogin/Form'
 
-export default Login;
+export default function Login() {
+    return (
+        <>
+            <p>Login</p>
+            <Form />
+        </>
+    );
+};

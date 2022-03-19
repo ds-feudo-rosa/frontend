@@ -1,5 +1,5 @@
-export function Footer() {
+export default function Footer() {
     return(
-        <p>aa</p>
-    )
-}
+        <p>Footer</p>
+    );
+};
