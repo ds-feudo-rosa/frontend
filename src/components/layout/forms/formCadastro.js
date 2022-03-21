@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-export default function Form() {
+export default function FormCadastro() {
     function cadastrarUsuario(e) {
         e.preventDefault()
         console.log(`Usuário ${name} foi cadastrado com a senha ${password}`)
     }
 
     const [name, setName] = useState()
+    const [email, setEmail] = useState()
     const [password, setPassowrd] = useState()
     return (
         <div>
@@ -21,6 +22,16 @@ export default function Form() {
                     placeholder="Digite seu nome"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input 
+                    type="text" 
+                    id="email"  
+                    placeholder="Digite seu email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div>
