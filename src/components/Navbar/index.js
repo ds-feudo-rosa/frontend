@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-
+import styles from './styles.module.scss'
 
 export default function Navbar() {
     return(
       <header>
-        <nav>
-          <ul className='navbar'>
+        <nav >
+          <ul className={styles.oi}>
             <li>
               <Link to="/feed">Feed</Link>
             </li>

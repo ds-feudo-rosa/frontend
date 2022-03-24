@@ -1,14 +1,6 @@
-body {
-    padding: 50px;
-    padding-bottom: 500px;
-    background-color: #efefef;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: #333;
-}
-
-p {
-  background-color: #999;
-  padding: 10px;
-}

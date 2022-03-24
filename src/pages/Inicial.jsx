@@ -1,10 +1,13 @@
-import Evento from "../layout/Evento";
+import { Button } from "@chakra-ui/react";
 
 export default function Inicial() {
     return(
         <>
-        <Evento />
+
         <div>Inicial</div>
+        <Button bg='blabla.900'>Botão chave</Button>
+
+
         </>
     );
 };

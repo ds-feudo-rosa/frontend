@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function FormCadastro() {
+export default function Cadastro() {
     function cadastrarUsuario(e) {
         e.preventDefault()
         console.log(`Usuário ${name} foi cadastrado com a senha ${password}`)
