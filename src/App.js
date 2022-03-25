@@ -8,19 +8,16 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 //pages
-import Inicial from './pages/Inicial'
+import Inicial from './pages/Inicial';
+import Feed from './pages/Feed';
+import Verificamos from './pages/Verificamos';
+import Solicitacoes from './pages/Solicitacoes';
 
 const sections = [
   { title: 'Inicial', url: '/inicial' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'Feed', url: '/feed' },
+  { title: 'Como Vericamos', url: '/verificamos' },
+  { title: 'Acompanhar Solicitação', url: '/solicitacoes' },
 ];
 
 const theme = createTheme();
@@ -35,6 +32,9 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route path='/inicial' element={<Inicial />}/>
+              <Route path='/feed' element={<Feed />}/>
+              <Route path='/verificamos' element={<Verificamos />}/>
+              <Route path='/solicitacoes' element={<Solicitacoes />}/>
             </Routes>
           </BrowserRouter>
         <Footer title='Footer' description='Footer'/>
@@ -42,6 +42,6 @@ export default function App() {
     </ThemeProvider>
 
   );
-}
+};
 
 
