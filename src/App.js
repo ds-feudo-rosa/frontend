@@ -1,25 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+//components
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+//pages
+import Inicial from './pages/Inicial';
+import Feed from './pages/Feed';
+import Verificamos from './pages/Verificamos';
+import Solicitacoes from './pages/Solicitacoes';
+import Cadastro from './pages/Cadastrar';
+import SignIn from './pages/Login';
+
+const sections = [
+  { title: 'Inicial', url: '/inicial' },
+  { title: 'Feed', url: '/feed' },
+  { title: 'Como Vericamos', url: '/verificamos' },
+  { title: 'Acompanhar Solicitação', url: '/solicitacoes' },
+];
+
+const theme = createTheme();
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    
+    <ThemeProvider theme={theme}>
+      <div className="App">   
+        <CssBaseline />
+          <BrowserRouter>
+        <Header title="SAFE" sections={sections} />
+            <Routes>
+              <Route path='/inicial' element={<Inicial />}/>
+              <Route path='/feed' element={<Feed />}/>
+              <Route path='/verificamos' element={<Verificamos />}/>
+              <Route path='/solicitacoes' element={<Solicitacoes />}/>
+              <Route path='/cadastrar' element={<Cadastro />}/>
+              <Route path='/login' element={<SignIn />}/>
+            </Routes>
+        <Footer title='Footer' description='Footer'/>
+          </BrowserRouter>
+      </div>
+    </ThemeProvider>
 
-export default App;
+  );
+};
+
+
