@@ -6,7 +6,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
-function Sidebar(props) {
+export default function Sidebar(props) {
   const { archives, description, social, title } = props;
 
   return (
@@ -63,5 +63,3 @@ Sidebar.propTypes = {
   ).isRequired,
   title: PropTypes.string.isRequired,
 };
-
-export default Sidebar;

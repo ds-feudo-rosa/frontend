@@ -13,14 +13,13 @@ import Feed from './pages/Feed';
 import Verificamos from './pages/Verificamos';
 import Solicitacoes from './pages/Solicitacoes';
 import Cadastro from './pages/Cadastrar';
-import { Login } from '@mui/icons-material';
+import SignIn from './pages/Login';
 
 const sections = [
   { title: 'Inicial', url: '/inicial' },
   { title: 'Feed', url: '/feed' },
   { title: 'Como Vericamos', url: '/verificamos' },
   { title: 'Acompanhar Solicitação', url: '/solicitacoes' },
-  { title: 'Cadastar-se', url: '/cadastrar' },
 ];
 
 const theme = createTheme();
@@ -39,7 +38,7 @@ export default function App() {
               <Route path='/verificamos' element={<Verificamos />}/>
               <Route path='/solicitacoes' element={<Solicitacoes />}/>
               <Route path='/cadastrar' element={<Cadastro />}/>
-              <Route path='/login' element={<Login />}/>
+              <Route path='/login' element={<SignIn />}/>
             </Routes>
         <Footer title='Footer' description='Footer'/>
           </BrowserRouter>
