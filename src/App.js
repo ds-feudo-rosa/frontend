@@ -17,15 +17,8 @@ import SignIn from './pages/Login';
 import Perfil from './pages/Perfil';
 
 //noticias
-import Noticia1 from './pages/Noticias/Noticia 1';
-import Noticia2 from './pages/Noticias/Noticia 2';
-import Noticia3 from './pages/Noticias/Noticia 3';
-import Noticia4 from './pages/Noticias/Noticia 4';
-import Noticia5 from './pages/Noticias/Noticia 5';
-import Noticia6 from './pages/Noticias/Noticia 6';
-import Noticia7 from './pages/Noticias/Noticia 7';
-import Noticia8 from './pages/Noticias/Noticia 8';
-import Noticia9 from './pages/Noticias/Noticia 9';
+import Noticias from './pages/Noticias';
+
 
 
 const sections = [
@@ -56,15 +49,8 @@ export default function App() {
               <Route path='/perfil' element={<Perfil />}/>
 
               
-              <Route path='/noticia1' element={<Noticia1 />}/>
-              <Route path='/noticia2' element={<Noticia2 />}/>
-              <Route path='/noticia3' element={<Noticia3 />}/>
-              <Route path='/noticia4' element={<Noticia4 />}/>
-              <Route path='/noticia5' element={<Noticia5 />}/>
-              <Route path='/noticia6' element={<Noticia6 />}/>
-              <Route path='/noticia7' element={<Noticia7 />}/>
-              <Route path='/noticia8' element={<Noticia8 />}/>
-              <Route path='/noticia9' element={<Noticia9 />}/>
+              <Route path='/noticias/:id' element={<Noticias />}/>
+
             </Routes>
         <Footer title='Footer' description='Footer'/>
           </BrowserRouter>
