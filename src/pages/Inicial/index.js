@@ -12,7 +12,7 @@ import Noticia1 from '../CardNoticias';
 const theme = createTheme();
 
 export default function Inicial() {
-  const noticias = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const noticias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -39,7 +39,7 @@ export default function Inicial() {
           <Grid container spacing={6}>
             {noticias.map((noticia) => {
               return (
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={2} sm={8} md={6}>
                   <Noticia1 id={noticia} titulo={`Noticia${noticia}`} resumo={`resumo noticia ${noticia}`} />
                 </Grid>
               )

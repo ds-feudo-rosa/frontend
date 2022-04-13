@@ -1,4 +1,5 @@
 import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import Contador from "../../components/Contador";
 
 
 
@@ -17,8 +18,7 @@ export default function CardNoticias({titulo, resumo, id}) {
       </CardContent>
       <CardActions>
         <Button size="small" href={`/noticias/${id}`}>View</Button>
-        <Button size="small">Verdadeiro</Button>
-        <Button size="small">Falso</Button>
+        <Contador />
       </CardActions>
     </Card>
     </>

@@ -25,7 +25,7 @@ const sections = [
   { title: 'Inicial', url: '/inicial' },
   { title: 'Feed', url: '/feed' },
   { title: 'Como Vericamos', url: '/verificamos' },
-  { title: 'Acompanhar Solicitação', url: '/solicitacoes' },
+  { title: 'Adicione sua notícia', url: '/solicitacoes' },
   { title: 'Perfil', url: '/perfil' },
 ];
 
