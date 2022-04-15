@@ -6,6 +6,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { TextField } from '@mui/material';
+import Button from '@mui/material/Button';
 
 
 
@@ -26,6 +27,7 @@ export default function Checkout() {
             <TextField id="outlined-basic" label="Texto da notícia" variant="outlined" />
             <p>Adicione uma imagem (Opcional)</p>
             <TextField id="outlined-basic" label="Link imagem" variant="outlined" />
+            <Button variant="contained">Enviar-falta linkar</Button> 
 
 
 
