@@ -14,12 +14,19 @@ import Verificamos from './pages/Verificamos';
 import Solicitacoes from './pages/Solicitacoes';
 import Cadastro from './pages/Cadastrar';
 import SignIn from './pages/Login';
+import Perfil from './pages/Perfil';
+
+//noticias
+import Noticias from './pages/Noticias';
+
+
 
 const sections = [
   { title: 'Inicial', url: '/inicial' },
   { title: 'Feed', url: '/feed' },
   { title: 'Como Vericamos', url: '/verificamos' },
-  { title: 'Acompanhar Solicitação', url: '/solicitacoes' },
+  { title: 'Adicione sua notícia', url: '/solicitacoes' },
+  { title: 'Perfil', url: '/perfil' },
 ];
 
 const theme = createTheme();
@@ -39,6 +46,11 @@ export default function App() {
               <Route path='/solicitacoes' element={<Solicitacoes />}/>
               <Route path='/cadastrar' element={<Cadastro />}/>
               <Route path='/login' element={<SignIn />}/>
+              <Route path='/perfil' element={<Perfil />}/>
+
+              
+              <Route path='/noticias/:id' element={<Noticias />}/>
+
             </Routes>
         <Footer title='Footer' description='Footer'/>
           </BrowserRouter>
