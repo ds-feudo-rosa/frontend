@@ -1,7 +1,11 @@
+import {  useState, useEffect } from "react";
 import { useParams } from 'react-router-dom'
+import axios from "axios";
+
 
 export default function Noticias() {
   const { id } = useParams()
+  const [news, setNews] = useState([]);
   //imagens aleatorias para testes
   const imgs = ['https://i.em.com.br/uKw-qDVV2FItakxzJbIOENAr8TI=/820x492/smart/imgsapp.em.com.br/app/noticia_127983242361/2019/10/04/1090179/20191004091130833766i.jpg', 
   'https://img.r7.com/images/macacos-assassinos-ratos-devoradores-malasia-22102019160746405?dimensions=794x460', 
@@ -17,10 +21,28 @@ export default function Noticias() {
     "Eu acredito que é melhor", completou.`,
     img: imgs[Math.floor(Math.random() * imgs.length)]
   }
+
+  const api = axios.create({
+    baseURL: "http://143.198.138.36:5000",
+  });
+
+  useEffect(() => {
+    api.get("/notice", {"id": id}).then((response) => {
+      console.log(JSON.parse(response.data));
+      let data = []
+      for(let i = 0; i < JSON.parse(response.data).length; i = i + 3) {
+        console.log(JSON.parse(response.data)[i], JSON.parse(response.data)[i+1], JSON.parse(response.data)[i+2])
+        data.push({"id": JSON.parse(response.data)[i], "title": JSON.parse(response.data)[i+1], "text": JSON.parse(response.data)[i+2]})
+      }
+      console.log(data[id-1])
+      setNews(data[id-1])
+    })
+  }, [])
+
   return (
     <>
-      <h1>{backendData.titulo}</h1>
-      <h3>{backendData.resumo}</h3>
+      <h1>{news.title}</h1>
+      <h3>{news.text}</h3>
       <img src={backendData.img}>
 
       </img>

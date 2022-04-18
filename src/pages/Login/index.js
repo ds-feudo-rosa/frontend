@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,6 +13,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from "axios";
+
 
 function Copyright(props) {
   return (
@@ -29,6 +32,13 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const api = axios.create({
+    baseURL: "http://143.198.138.36:5000",
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -36,6 +46,22 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     });
+    let body = {
+      email: data.get('email'),
+      password: data.get('password')
+    };
+    let config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+      }
+    }
+    api.get("/notice").then((response) => {
+      console.log(response);
+    })
+    api.post("/login", body, config).then((response) => {
+      console.log("logado");
+    })
   };
 
   return (
@@ -64,6 +90,8 @@ export default function SignIn() {
               id="email"
               label="Email Address"
               name="email"
+              value={email}
+              onChange={(e)=>{setEmail(e.target.value)}}
               autoComplete="email"
               autoFocus
             />
@@ -75,6 +103,8 @@ export default function SignIn() {
               label="Password"
               type="password"
               id="password"
+              value={password}
+              onChange={(e)=>{setPassword(e.target.value)}}
               autoComplete="current-password"
             />
             <FormControlLabel
