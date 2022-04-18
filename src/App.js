@@ -22,8 +22,7 @@ import Noticias from './pages/Noticias';
 
 
 const sections = [
-  { title: 'Inicial', url: '/inicial' },
-  { title: 'Feed', url: '/feed' },
+  { title: 'Inicial', url: '/' },
   { title: 'Como Vericamos', url: '/verificamos' },
   { title: 'Adicione sua notícia', url: '/solicitacoes' },
   { title: 'Perfil', url: '/perfil' },
@@ -40,7 +39,7 @@ export default function App() {
           <BrowserRouter>
         <Header title="SAFE" sections={sections} />
             <Routes>
-              <Route path='/inicial' element={<Inicial />}/>
+              <Route path='/' element={<Inicial />}/>
               <Route path='/feed' element={<Feed />}/>
               <Route path='/verificamos' element={<Verificamos />}/>
               <Route path='/solicitacoes' element={<Solicitacoes />}/>
