@@ -28,24 +28,18 @@ export default function Noticias() {
 
   useEffect(() => {
     api.get("/notice", {"id": id}).then((response) => {
-      console.log(JSON.parse(response.data));
-      let data = []
-      for(let i = 0; i < JSON.parse(response.data).length; i = i + 3) {
-        console.log(JSON.parse(response.data)[i], JSON.parse(response.data)[i+1], JSON.parse(response.data)[i+2])
-        data.push({"id": JSON.parse(response.data)[i], "title": JSON.parse(response.data)[i+1], "text": JSON.parse(response.data)[i+2]})
-      }
-      console.log(data[id-1])
-      setNews(data[id-1])
+      console.log(response.data);
+      console.log(response.data[id-1])
+      setNews(response.data[id-1])
     })
   }, [])
 
   return (
     <>
       <h1>{news.title}</h1>
-      <h3>{news.text}</h3>
-      <img src={backendData.img}>
-
+      <img width={350} src={news.url}>
       </img>
+      <h3>{news.text}</h3>
     </>
   )
 }

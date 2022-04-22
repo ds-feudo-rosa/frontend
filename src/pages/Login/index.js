@@ -53,13 +53,14 @@ export default function SignIn() {
     let config = {
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Authorization, X-Request-With'
       }
     }
-    api.get("/notice").then((response) => {
-      console.log(response);
-    })
-    api.post("/login", body, config).then((response) => {
+    // api.get("/notice").then((response) => {
+    //   console.log(response);
+    // })
+    api.post("/login", body).then((response) => {
       console.log("logado");
     })
   };
@@ -116,6 +117,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              // href="/"
             >
               Continuar
             </Button>

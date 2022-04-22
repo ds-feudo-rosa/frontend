@@ -23,14 +23,8 @@ export default function Inicial() {
 
   useEffect(() => {
     api.get("/notice").then((response) => {
-      console.log(JSON.parse(response.data));
-      let data = []
-      for(let i = 0; i < JSON.parse(response.data).length; i = i + 3) {
-        console.log(JSON.parse(response.data)[i], JSON.parse(response.data)[i+1], JSON.parse(response.data)[i+2])
-        data.push({"id": JSON.parse(response.data)[i], "title": JSON.parse(response.data)[i+1], "text": JSON.parse(response.data)[i+2]})
-      }
-      console.log(data)
-      setNews(data)
+      console.log(response.data);
+      setNews(response.data)
       console.log("asd", news)
     })
   }, [])
