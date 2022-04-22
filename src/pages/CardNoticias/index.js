@@ -1,9 +1,14 @@
 import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
-import Contador from "../../components/Contador";
+import { useState } from "react";
 
 
 
-export default function CardNoticias({titulo, resumo, id}) {
+
+export default function CardNoticias({titulo, resumo, id, likes, dislikes}) {
+  const [like, setLike] = useState(likes ?? 0); // [variable, () => {}]
+  const [dislike, setDislike] = useState(dislikes ?? 0);
+  
+  
   return (
     <>
     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -18,7 +23,20 @@ export default function CardNoticias({titulo, resumo, id}) {
       </CardContent>
       <CardActions>
         <Button size="small" href={`/noticias/${id}`}>View</Button>
-        <Contador />
+        
+        <>
+      <div>
+        <Button onClick={() => setLike(like + 1)}>
+          {like} Verdadeiro ✅
+        </Button>
+      </div>
+      <div>
+        <Button onClick={() => setDislike(dislike + 1)}>
+          {dislike} Falso ❌
+        </Button>
+      </div>
+    </> 
+
       </CardActions>
     </Card>
     </>

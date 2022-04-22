@@ -116,7 +116,7 @@ export default function Cadastrar() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+        <Grid sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );

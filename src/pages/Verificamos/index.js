@@ -8,10 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import StarIcon from '@mui/icons-material/StarBorder';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
@@ -21,7 +18,6 @@ const tiers = [
     title: 'Verdadeira',    
     description: [
       'Aprovação de 90%',
-      'Verificada por expecialistas',
     ],
     buttonText: 'Verdadeira',
     buttonVariant: "contained",
@@ -33,9 +29,8 @@ const tiers = [
     price: '15',
     description: [
       'Rejeição de 90%',
-      'Verificada por expecialistas'
     ],
-    buttonText: 'Fake News',
+    buttonText: 'Falsa',
     buttonVariant: 'contained',
     buttonColor:"error",
   },
@@ -43,7 +38,6 @@ const tiers = [
     title: 'Duvidosa',
     description: [
       'Aprovação de 10%',
-      'Verificada por expecialistas'
     ],
     buttonText: 'Duvidosa',
     buttonVariant: 'contained',
